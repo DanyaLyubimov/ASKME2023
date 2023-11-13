@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sticky Footer Navbar Template · Bootstrap v5.2</title>
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h1>ASKME</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">ASK!</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="profile">
+            <div class="row">
+                <div class="col-3">
+                    <div class="small-avatar">
+                        <img src="../static/img/avatar-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="small-nickname">
+                        <h5><a>Cris Pole</a></h5>
+                    </div>
+                    <button type="button" class="btn btn-info profileButton info">Profile</button>
+                    <button type="button" class="btn btn-outline-dark profileButton logout">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8"><h1>Question 1</h1></div>
+            <div class="col-4"><h1>Popular Tags</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="question">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="avatar">
+                                <img src="../static/img/avatar-1.jpg" alt="">
+                            </div>
+                            <div class="likes">
+                                <input class="btn btn-primary like" type="button" value="Likes">
+                                <input class="btn btn-primary dislike" type="button" value="Dislikes">
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <h2 class="question-title">Question 1</h2>
+                            <div class="question-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Deserunt distinctio doloremque eos eveniet, explicabo officiis perferendis provident
+                                quia quos voluptate!
+                            </div>
+                            <div class="questions-answer">
+                                <div class="row">
+                                    <div class="col-4"><a>Answers</a></div>
+                                    <div class="col 6"><a>Tags</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="answers ">
+                    <div class="answer">
+                        <h3>Answer 1</h3>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="small-avatar-answer">
+                                    <img src="../static/img/avatar-1.jpg" alt="">
+                                </div>
+                                <div class="likes-answer">
+                                    <input class="btn btn-primary like" type="button" value="Likes">
+                                    <input class="btn btn-primary dislike" type="button" value="Dislikes">
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <h3><a>Barak Obama</a></h3>
+                                <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium
+                                    purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros
+                                    Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras
+                                    mattis iudicium purus sit amet fermentum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="answer">
+                        <h3>Answer 2</h3>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="small-avatar-answer">
+                                    <img src="../static/img/avatar-2.jpg" alt="">
+                                </div>
+                                <div class="likes-answer">
+                                    <input class="btn btn-primary like" type="button" value="Likes">
+                                    <input class="btn btn-primary dislike" type="button" value="Dislikes">
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <h3><a>Cris Pole</a></h3>
+                                <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium
+                                    purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros
+                                    Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras
+                                    mattis iudicium purus sit amet fermentum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="answer-form">
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label textQuestion">Your answer</label>
+                                <textarea placeholder="Really,how?" class="form-control"
+                                          id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-send btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="popular-tags">
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Surfinging</div>
+                                Content for list item
+                            </div>
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Killepaking</div>
+                                Content for list item
+                            </div>
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Subheading</div>
+                                Content for list item
+                            </div>
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                    </ol>
+                </div>
+                <h2>Popular Members</h2>
+                <div class="Members">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mini-avatar">
+                                        <img src="../static/img/avatar-1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="nickname"><h3>Nagibator 228</h3></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mini-avatar">
+                                        <img src="../static/img/avatar-2.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="nickname"><h3>Temroritor</h3></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mini-avatar">
+                                        <img src="../static/img/avatar-3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="nickname"><h3>Santa Claus</h3></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

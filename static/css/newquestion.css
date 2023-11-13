@@ -1,0 +1,18 @@
+main > .container {
+  padding: 100px 15px 0;
+}
+
+.questionForm{
+  background-color: #e8e6e6;
+  padding: 5px 10px 15px 20px;
+  border-radius: 20px;
+}
+
+.btn-send{
+  background-color: #25cff2;
+  border: none;
+}
+
+.Members{
+  margin-bottom: 40px;
+}
