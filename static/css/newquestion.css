@@ -16,3 +16,8 @@ main > .container {
 .Members{
   margin-bottom: 40px;
 }
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}

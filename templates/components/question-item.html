@@ -1,0 +1,25 @@
+{% load static %}
+<div class="question">
+    <div class="row">
+        <div class="col-3">
+            <div class="avatar">
+                <img src="{% static 'img/avatar-1.jpg' %}" alt="">
+            </div>
+            <div class="likes">
+                <input class="btn btn-primary like" type="button" value="Likes">
+                <input class="btn btn-primary dislike" type="button" value="Dislikes">
+            </div>
+        </div>
+        <div class="col-9">
+            <a href="{% url 'question' question.id %}"><h2 class="question-title">{{ question.title }}</h2></a>
+            <div class="question-text">{{ question.content }}
+            </div>
+            <div class="questions-answer">
+                <div class="feedback row">
+                    <div class="col-4"><a>Answers</a></div>
+                    <div class="col 6"><a>Tags</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -68,13 +68,19 @@ img {
 }
 
 .questions-answer {
-    text-decoration-line: underline;
     font-size: 20px;
     color: #170999;
 }
 
+.question-title {
+    color: black;
+}
+.feedback{
+    vertical-align:bottom;
+}
 a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .popular-tags {
@@ -133,9 +139,9 @@ a {
 
 .profileButton {
     padding: 0px 3px 6px 3px;
-    width: 50px;
+    width: 70px;
     max-height: 20px;
-    font-size: 12px;
+    font-size: 16px;
     margin: 0;
     background: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
     color: #d5d2d2;
