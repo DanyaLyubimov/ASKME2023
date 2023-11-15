@@ -35,8 +35,8 @@ class AnswersManager(models.Manager):
 
 
 class Tag(models.Model):
-    title = models.CharField(max_length=256)
-    description = models.CharField(max_length=256)
+    title = models.CharField(max_length=20)
+    description = models.CharField(max_length=60)
 
     objects = TagsManager()
 
@@ -46,7 +46,7 @@ class Tag(models.Model):
 
 class Question(models.Model):
     date = models.DateField(default='2023-01-01')
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=50)
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
@@ -80,3 +80,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user}'
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ForeignKey('Question', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user.username} likes {self.answer}'
