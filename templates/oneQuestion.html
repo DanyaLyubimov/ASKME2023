@@ -4,52 +4,9 @@
     <h1>Question 1</h1>
     {% include 'components/question-item.html' %}
     <div class="answers ">
-        <div class="answer">
-            <h3>Answer 1</h3>
-            <div class="row">
-                <div class="col-2">
-                    <div class="small-avatar-answer">
-                        <img src="../static/img/avatar-1.jpg" alt="">
-                    </div>
-                    <div class="likes-answer">
-                        <input class="btn btn-primary like" type="button" value="Likes">
-                        <input class="btn btn-primary dislike" type="button" value="Dislikes">
-                    </div>
-                </div>
-                <div class="col-10">
-                    <h3><a>Barak Obama</a></h3>
-                    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium
-                        purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
-                        Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros
-                        Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras
-                        mattis iudicium purus sit amet fermentum.</p>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="answer">
-            <h3>Answer 2</h3>
-            <div class="row">
-                <div class="col-2">
-                    <div class="small-avatar-answer">
-                        <img src="../static/img/avatar-2.jpg" alt="">
-                    </div>
-                    <div class="likes-answer">
-                        <input class="btn btn-primary like" type="button" value="Likes">
-                        <input class="btn btn-primary dislike" type="button" value="Dislikes">
-                    </div>
-                </div>
-                <div class="col-10">
-                    <h3><a>Cris Pole</a></h3>
-                    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium
-                        purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
-                        Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros
-                        Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras
-                        mattis iudicium purus sit amet fermentum.</p>
-                </div>
-            </div>
-        </div>
-        <hr>
+        {% for answer in answers%}
+        {% include 'components/answer_item.html' %}
+        {% endfor %}
         <div class="answer-form">
             <div class="mb-3">
                 <div class="mb-3">

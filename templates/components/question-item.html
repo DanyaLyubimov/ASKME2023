@@ -11,13 +11,18 @@
             </div>
         </div>
         <div class="col-9">
-            <a href="{% url 'question' question_id=question.id %}"><h2 class="question-title">{{ question.title }} {{question.tag}}</h2></a>
-            <div class="question-text">{{ question.content }}
+            <a href="{% url 'question' question_id=question.id %}"><h2 class="question-title">{{ question.title }}</h2>
+            </a>
+            <div class="question-text">{{ question.description }}
             </div>
             <div class="questions-answer">
                 <div class="feedback row">
                     <div class="col-4"><a>Answers</a></div>
-                    <div class="col 6"><a>Tags</a></div>
+                    <div class="col 6"><a>Tags</a>
+                        {% for tag in question.tags.all %}
+                        <a href="{% url 'tag_questions' tag_name=tag %}" class='tag'>{{ tag.title }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

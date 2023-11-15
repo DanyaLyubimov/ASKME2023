@@ -157,6 +157,11 @@ body {
     background-color: #dbebfa;
 }
 
+
+.tag{
+    font-size:16px !important;
+}
+
 .popular-tags {
     border: 5px solid grey;
     border-radius: 10px;
