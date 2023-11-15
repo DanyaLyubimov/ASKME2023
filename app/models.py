@@ -87,4 +87,4 @@ class Like(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.user.username} likes {self.answer}'
+        return f'{self.user.username} likes {self.question}'
