@@ -43,21 +43,21 @@ class Command(BaseCommand):
 
             question.tags.set(random.sample(tags, random.randint(1, ratio)))
 
-            for j in range(ratio * 10):
-                answer_author = random.choice(users)
-                answer = Answer(
-                    question=question,
-                    author=answer_author,
-                    description=fake.text(),
-                    likes=random.randint(0, ratio * 5),
-                    dislikes=random.randint(0, ratio * 5),
-                )
-                answer.save()
+        for j in range(ratio * 100):
+            answer_author = random.choice(users)
+            answer = Answer(
+                question=question,
+                author=answer_author,
+                description=fake.text(),
+                likes=random.randint(0, ratio * 5),
+                dislikes=random.randint(0, ratio * 5),
+            )
+            answer.save()
 
                 # Simulate user ratings
-                for _ in range(ratio * 2):
-                    rated_user = random.choice(users)
-                    like = Like(user=rated_user, question=question)
-                    like.save()
+        for _ in range(ratio * 200):
+            rated_user = random.choice(users)
+            like = Like(user=rated_user, question=question)
+            like.save()
 
         self.stdout.write(self.style.SUCCESS(f'Successfully filled the database with test data (ratio: {ratio}).'))

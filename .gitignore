@@ -1,4 +1,6 @@
 .idea/
+app/management/commands/fill_db2.py
+app/management/commands/fill_db3.py
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
