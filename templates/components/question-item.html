@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-9">
-            <a href="{% url 'question' question.id %}"><h2 class="question-title">{{ question.title }}</h2></a>
+            <a href="{% url 'question' question_id=question.id %}"><h2 class="question-title">{{ question.title }} {{question.tag}}</h2></a>
             <div class="question-text">{{ question.content }}
             </div>
             <div class="questions-answer">
