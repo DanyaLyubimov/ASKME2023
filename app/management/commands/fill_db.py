@@ -2,7 +2,7 @@ import random
 from faker import Faker
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
-from app.models import Question, Answer, Tag, Like
+from app.models import Question, Answer, Tag, QuestionLike, AnswerLike
 
 
 class Command(BaseCommand):
@@ -16,20 +16,20 @@ class Command(BaseCommand):
         ratio = kwargs['ratio']
 
         # Create Users
-        users = []
-        for i in range(ratio):
-            user = User(username=f'user{i+10}', email=fake.email(), password=fake.password())
-            user.save()
-            users.append(user)
+        users = [
+            User(username=f'newUser{i}', email=fake.email(), password=fake.password())
+            for i in range(ratio)
+        ]
+        User.objects.bulk_create(users)
 
         # Create Tags
-        tags = []
-        for i in range(ratio):
-            tag = Tag(title=f'tag{i}', description=fake.text())
-            tag.save()
-            tags.append(tag)
+        tags = [
+            Tag(title=f'newTag{i}', description=fake.text())
+            for i in range(ratio)
+        ]
+        Tag.objects.bulk_create(tags)
 
-        # Create Questions, Answers, and Ratings
+        questions = []
         for i in range(ratio * 10):
             author = random.choice(users)
             question = Question(
@@ -39,12 +39,22 @@ class Command(BaseCommand):
                 likes=random.randint(0, ratio * 5),
                 dislikes=random.randint(0, ratio * 5),
             )
-            question.save()
+            questions.append(question)
+        print(*questions)
+        Question.objects.bulk_create(questions)
+        for _ in range(ratio*100):
+            question = random.choice(questions)
+            rated_user = random.choice(users)
+            question_like, created = QuestionLike.objects.get_or_create(user=rated_user, question=question)
 
-            question.tags.set(random.sample(tags, random.randint(1, ratio)))
+        for question in questions:
+            question_tags = random.sample(tags, random.randint(1, ratio))
+            question.tags.set(question_tags)
 
+        answers = []
         for j in range(ratio * 100):
             answer_author = random.choice(users)
+            question = random.choice(questions)
             answer = Answer(
                 question=question,
                 author=answer_author,
@@ -52,12 +62,11 @@ class Command(BaseCommand):
                 likes=random.randint(0, ratio * 5),
                 dislikes=random.randint(0, ratio * 5),
             )
-            answer.save()
-
-                # Simulate user ratings
-        for _ in range(ratio * 200):
+            answers.append(answer)
+        Answer.objects.bulk_create(answers)
+        for _ in range(ratio*100):
             rated_user = random.choice(users)
-            like = Like(user=rated_user, question=question)
-            like.save()
+            answer = random.choice(answers)
+            answer_like, created = AnswerLike.objects.get_or_create(user=rated_user, answer=answer)
 
         self.stdout.write(self.style.SUCCESS(f'Successfully filled the database with test data (ratio: {ratio}).'))

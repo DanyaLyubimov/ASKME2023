@@ -28,11 +28,11 @@ HOT_QUESTIONS = [
 ]
 
 
-def paginate(objects, request, per_page=15):
+def paginate(objects_list, request, per_page=15):
     page = int(request.GET.get('page', 1))
-    if page > len(objects)//per_page+1:
-        page = len(objects)//per_page+1
-    paginator = Paginator(objects, per_page)
+    if page > len(objects_list)//per_page+1:
+        page = len(objects_list) // per_page + 1
+    paginator = Paginator(objects_list, per_page)
     return paginator.page(page)
 
 
